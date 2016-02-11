@@ -132,6 +132,8 @@ static void raspi_machine_init(MachineState *machine, int version,
     if (version == 2) {
         object_property_set_int(s->soc, smp_cpus, "enabled-cpus", &error_abort);
     }
+    object_property_set_int(s->soc, 0xa21041, "board-rev",
+                            &error_abort);
     object_property_set_bool(s->soc, true, "realized", &error_abort);
 
     /* Prepare to boot */

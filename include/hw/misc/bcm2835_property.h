@@ -25,6 +25,7 @@ typedef struct {
     MemoryRegion iomem;
     qemu_irq mbox_irq;
     MACAddr macaddr;
+    uint32_t board_rev;
     uint32_t addr;
     bool pending;
 } BCM2835PropertyState;

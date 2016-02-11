@@ -41,6 +41,8 @@ static void bcm2836_init(Object *obj)
                               &error_abort);
     object_property_add_alias(obj, "vcram-size", OBJECT(&s->peripherals),
                               "vcram-size", &error_abort);
+    object_property_add_alias(obj, "board-rev", OBJECT(&s->peripherals),
+                              "board-rev", &error_abort);
     qdev_set_parent_bus(DEVICE(&s->peripherals), sysbus_get_default());
 }
 
