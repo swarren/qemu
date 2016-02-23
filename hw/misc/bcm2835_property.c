@@ -58,6 +58,7 @@ static void bcm2835_property_mbox_push(BCM2835PropertyState *s, uint32_t value)
         case 0x00010004: /* Get board serial */
             qemu_log_mask(LOG_UNIMP,
                           "bcm2835_property: %x get board serial NYI\n", tag);
+            stl_phys(&s->dma_as, value + 12, 0xaf961234);
             resplen = 8;
             break;
         case 0x00010005: /* Get ARM memory */
